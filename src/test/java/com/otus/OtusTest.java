@@ -16,8 +16,12 @@ public class OtusTest extends BaseTest{
     }
 
     @Test
-    public void checkingInformationOfCourses(){
-
+    public void checkingInformationOfCourses() {
+        MainPage mainPage=new MainPage(driver,logger,actions);
+        mainPage.goToSiteOtus();
+        mainPage.goToSectionTesting();
+        TestingPage testingPage=new TestingPage(driver,logger,actions);
+        testingPage.checkingInformation();
     }
 
 }
