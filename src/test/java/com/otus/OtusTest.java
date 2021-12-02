@@ -1,5 +1,6 @@
 package com.otus;
 
+import com.otus.pages.EventPage;
 import com.otus.pages.MainPage;
 import com.otus.pages.TestingPage;
 import com.otus.pages.cardsPages.BaseCardPage;
@@ -44,6 +45,8 @@ public class OtusTest extends BaseTest {
         MainPage mainPage = new MainPage(driver, logger, actions);
         mainPage.goToSiteOtus();
         mainPage.goToSectionEvent();
+        EventPage eventPage=new EventPage(driver, logger, actions);
+        eventPage.compareDates();
     }
 
 
