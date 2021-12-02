@@ -1,6 +1,7 @@
 package com.otus.pages;
 
 import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,6 +33,15 @@ public class BasePage {
         WebElement element = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         return element;
+    }
+
+    public void findInformationOfCard(String duration, String courseAbout, String titleOfCourse) {
+        String textOfDuration = driver.findElement(By.xpath(duration)).getText();
+        Assertions.assertNotNull(textOfDuration, "Длительность обучения равна null");
+        String textOfCourseAbout = driver.findElement(By.xpath(courseAbout)).getText();
+        Assertions.assertNotNull(textOfCourseAbout, "Описание обучения равно null");
+        String textOfTitle = driver.findElement(By.xpath(titleOfCourse)).getText();
+        Assertions.assertNotNull(textOfTitle, "Название равно null");
     }
 
 }
