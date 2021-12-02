@@ -26,7 +26,7 @@ public class TestingPage extends BasePage {
         logger.info("Проверка карточек прошла успешно");
     }
 
-    public void checkingInformation() {
+    public void checkingInformation(BaseCardPage baseCardPage) {
         List<WebElement> cards = driver.findElements(By.xpath(card));
         driver.manage().window().fullscreen();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -36,7 +36,6 @@ public class TestingPage extends BasePage {
             }
             WebElement course = cards.get(i);
             course.click();
-            BaseCardPage baseCardPage = new BaseCardPage(driver, logger, actions);
             baseCardPage.findInformationOfCard(baseCardPage.getDuration(), baseCardPage.getCourseAbout(),
                     baseCardPage.getTitleOfCourse());
             logger.info("Проверили карточку " + (i + 1));
