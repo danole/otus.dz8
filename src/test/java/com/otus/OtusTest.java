@@ -8,10 +8,12 @@ import com.otus.pages.cardsPages.ManualTestingPage;
 import com.otus.pages.cardsPages.QaAutomationEngineerPage;
 import org.junit.jupiter.api.Test;
 
+import java.text.ParseException;
+
 public class OtusTest extends BaseTest {
 
     @Test
-    public void checkingTheNumberOfCourses() {
+    public void checkingTheNumberOfCoursesTest() {
         MainPage mainPage = new MainPage(driver, logger, actions);
         mainPage.goToSiteOtus();
         mainPage.goToSectionTesting();
@@ -20,7 +22,7 @@ public class OtusTest extends BaseTest {
     }
 
     @Test
-    public void checkingInformationOfCourses() {
+    public void checkingInformationOfCoursesTest() {
         MainPage mainPage = new MainPage(driver, logger, actions);
         mainPage.goToSiteOtus();
         mainPage.goToSectionTesting();
@@ -41,12 +43,23 @@ public class OtusTest extends BaseTest {
     }
 
     @Test
-    public void checkingDateOfEvent(){
+    public void checkingDateOfEventTest() throws ParseException {
         MainPage mainPage = new MainPage(driver, logger, actions);
         mainPage.goToSiteOtus();
         mainPage.goToSectionEvent();
         EventPage eventPage=new EventPage(driver, logger, actions);
         eventPage.compareDates();
+        logger.info("Проверили даты");
+    }
+
+    @Test
+    public void checkingTypeOfEvent(){
+        MainPage mainPage = new MainPage(driver, logger, actions);
+        mainPage.goToSiteOtus();
+        mainPage.goToSectionEvent();
+        EventPage eventPage=new EventPage(driver, logger, actions);
+        eventPage.sortingEventByTypeDod();
+        eventPage.checkingEvents();
     }
 
 

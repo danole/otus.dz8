@@ -27,7 +27,8 @@ public class MainPage extends BasePage {
 
     public void goToSectionEvent(){
         actions.moveToElement(waitToVisibleElement(event)).build().perform();
-        waitToVisibleElement(calendarOfEvents).click();
+        actions.moveToElement(waitToVisibleElement(calendarOfEvents)).click().build().perform();
+        logger.info("Перешли на страницу мероприятия");
     }
 
 }
