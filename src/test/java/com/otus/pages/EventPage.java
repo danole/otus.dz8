@@ -1,5 +1,6 @@
 package com.otus.pages;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -16,21 +17,24 @@ import java.util.Locale;
 
 public class EventPage extends BasePage {
 
-    public EventPage(WebDriver driver, Logger logger, Actions actions) {
-        super(driver, logger, actions);
+    public EventPage(WebDriver driver, Actions actions) {
+        super(driver, actions);
     }
 
+    protected Logger logger = LogManager.getLogger(EventPage.class.getName());
 
-    List<WebElement> dateList = driver.findElements(By.xpath("//div[@class='dod_new-event__time']"));
     private final int THE_CURRENT_YEAR = 2021;
     private String dodInput = "//div[@class='dod_new-events__header-left']/*[2]/*[1]";
     private String dodButton = "//div[@class='dod_new-events__header-left']/*[2]/*[2]/*[3]";
     private String closeBanner = "//div[@class='sticky-banner__close js-sticky-banner-close']";
     private String typeList = "//div[@class='dod_new-event-content']/*[1]";
-
-    private Date date = new Date();
+    private String dateListXpath = "//div[@class='dod_new-event__time']";
 
     public void compareDates() throws ParseException {
+
+        Date date = new Date();
+
+        List<WebElement> dateList = driver.findElements(By.xpath(dateListXpath));
 
         for (int i = 0; i < dateList.size(); i++) {
             DateFormat dateFormat = new SimpleDateFormat("dd MMM HH:mm yyyy", new Locale("ru"));

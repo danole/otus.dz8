@@ -11,9 +11,9 @@ import org.openqa.selenium.opera.OperaOptions;
 
 public class WebDriverFactory {
 
-    public static WebDriver driver;
+    public WebDriver driver;
 
-    public static WebDriver create(String webDriverName, String options) {
+    public WebDriver create(String webDriverName, String options) {
 
         if (webDriverName.equals(Browsers.CHROME.toString().toLowerCase())) {
             WebDriverManager.chromedriver().setup();

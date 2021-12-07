@@ -1,6 +1,7 @@
 package com.otus.pages;
 
 import com.otus.pages.cardsPages.BaseCardPage;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -13,10 +14,11 @@ import java.util.concurrent.TimeUnit;
 
 public class TestingPage extends BasePage {
 
-    public TestingPage(WebDriver driver, Logger logger, Actions actions) {
-        super(driver, logger, actions);
+    public TestingPage(WebDriver driver, Actions actions) {
+        super(driver, actions);
     }
 
+    protected Logger logger = LogManager.getLogger(TestingPage.class.getName());
     private String card = "//a[@class='js-stats lessons__new-item lessons__new-item_hovered']";
     public final int NUMBER_OF_CARDS = 11;
 

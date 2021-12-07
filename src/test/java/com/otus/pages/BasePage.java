@@ -1,6 +1,5 @@
 package com.otus.pages;
 
-import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,12 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 
     protected WebDriver driver;
-    protected Logger logger;
     protected Actions actions;
 
-    public BasePage(WebDriver driver, Logger logger, Actions actions) {
+    public BasePage(WebDriver driver, Actions actions) {
         this.driver = driver;
-        this.logger = logger;
         this.actions = actions;
     }
 
