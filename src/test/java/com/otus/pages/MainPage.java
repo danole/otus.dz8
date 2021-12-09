@@ -17,16 +17,25 @@ public class MainPage extends BasePage {
     private String event = "//div[@class='header2-menu header2-menu_main']/*[2]";
     private String calendarOfEvents = "//div[@class='header2-menu header2-menu_main']/*[2]/*[2]/*[2]";
 
+    /**
+     * Переходит на сайт Otus
+     */
     public void goToSiteOtus() {
         driver.get("https://otus.ru/");
         logger.info("Зашли на сайт");
     }
 
+    /**
+     * Переходит в раздел Тестирование
+     */
     public void goToSectionTesting() {
         waitToVisibleElement(testing).click();
         logger.info("Зашли в раздел \"Тестирование\" ");
     }
 
+    /**
+     * Переходит в раздел Мероприятия
+     */
     public void goToSectionEvent() {
         actions.moveToElement(waitToVisibleElement(event)).build().perform();
         actions.moveToElement(waitToVisibleElement(calendarOfEvents)).click().build().perform();

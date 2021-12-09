@@ -22,12 +22,20 @@ public class TestingPage extends BasePage {
     private String card = "//a[@class='js-stats lessons__new-item lessons__new-item_hovered']";
     public final int NUMBER_OF_CARDS = 11;
 
+    /**
+     * Загружает карточки в List и сверяет их количество с нужным нам(константа NUMBER_OF_CARDS)
+     */
     public void checkNumberOfCard() {
         List<WebElement> cards = driver.findElements(By.xpath(card));
         Assertions.assertEquals(NUMBER_OF_CARDS, cards.size(), "Количество карточек не совпадает!");
         logger.info("Проверка карточек прошла успешно");
     }
 
+    /**
+     * Метод, который заходит в карточки поочереди и смотрит там их информацию, кроме 5 и 11 карточки, так как они не являются стандартными
+     *
+     * @param baseCardPage объект класса baseCardPage, который является базовой страницей карточки в разделе тестирование
+     */
     public void checkingInformation(BaseCardPage baseCardPage) {
         List<WebElement> cards = driver.findElements(By.xpath(card));
         driver.manage().window().fullscreen();
@@ -46,12 +54,18 @@ public class TestingPage extends BasePage {
         }
     }
 
+    /**
+     * Переход на карточку Qa Automation Engineer
+     */
     public void goToQaAutomationEngineerPage() {
         List<WebElement> cards = driver.findElements(By.xpath(card));
         WebElement course = cards.get(4);
         course.click();
     }
 
+    /**
+     * Переход на карточку Ручное тестирование
+     */
     public void goToManualTestingPage() {
         List<WebElement> cards = driver.findElements(By.xpath(card));
         WebElement course = cards.get(10);

@@ -11,6 +11,9 @@ public class BaseTest {
     protected WebDriver driver;
     protected Actions actions;
 
+    /**
+     * Запускает перед каждым тестом нужный нам драйвер и создает объект Actions
+     */
     @BeforeEach
     protected void startUp() {
         WebDriverFactory webDriverFactory = new WebDriverFactory();
@@ -18,6 +21,9 @@ public class BaseTest {
         actions = new Actions(driver);
     }
 
+    /**
+     * Завершает работу драйвера после каждого теста
+     */
     @AfterEach
     protected void end() {
         if (driver != null) {

@@ -16,6 +16,9 @@ public class OtusTest extends BaseTest {
 
     protected Logger logger = LogManager.getLogger(OtusTest.class.getName());
 
+    /**
+     * Тест, который проверяет количество карточек в разделе тестирование
+     */
     @Test
     public void checkingTheNumberOfCoursesTest() {
         MainPage mainPage = new MainPage(driver, actions);
@@ -25,6 +28,9 @@ public class OtusTest extends BaseTest {
         testingPage.checkNumberOfCard();
     }
 
+    /**
+     * Тест, который проверяет информацию в карточках из раздела тестирование
+     */
     @Test
     public void checkingInformationOfCoursesTest() {
         MainPage mainPage = new MainPage(driver, actions);
@@ -46,6 +52,12 @@ public class OtusTest extends BaseTest {
         logger.info("Проверили карточку " + manualTestingPage.getNumberCard());
     }
 
+    /**
+     * Тест, который сверяет даты в разделе мероприятия
+     *
+     * @throws ParseException
+     * @throws InterruptedException
+     */
     @Test
     public void checkingDateOfEventTest() throws ParseException, InterruptedException {
         MainPage mainPage = new MainPage(driver, actions);
@@ -56,6 +68,11 @@ public class OtusTest extends BaseTest {
         logger.info("Проверили даты");
     }
 
+    /**
+     * Тест, который сверяет тип мероприятия с нужным нам
+     *
+     * @throws InterruptedException
+     */
     @Test
     public void checkingTypeOfEvent() throws InterruptedException {
         MainPage mainPage = new MainPage(driver, actions);

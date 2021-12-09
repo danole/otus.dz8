@@ -13,6 +13,14 @@ public class WebDriverFactory {
 
     public WebDriver driver;
 
+    /**
+     * Создает driver для нужного нам браузера
+     *
+     * @param webDriverName Аргумент, который передает название браузера
+     * @param options       Параметры браузера(полный экран, режим киоска и т.д.)
+     * @return Возвращает driver для нужного нам браузера
+     */
+
     public WebDriver create(String webDriverName, String options) {
 
         if (webDriverName.equals(Browsers.CHROME.toString().toLowerCase())) {

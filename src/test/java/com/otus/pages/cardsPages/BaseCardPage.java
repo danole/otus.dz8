@@ -20,14 +20,23 @@ public class BaseCardPage extends BasePage {
     private String courseAbout = "//div[@class='course-about']";
     private String titleOfCourse = "//div[@class='course-header2__info-text js-course-header2-info-text']/*[1]";
 
+    /**
+     * @return xpath Длительность обучения
+     */
     public String getDuration() {
         return duration;
     }
 
+    /**
+     * @return xpath Описания курса
+     */
     public String getCourseAbout() {
         return courseAbout;
     }
 
+    /**
+     * @return xpath Названия курса
+     */
     public String getTitleOfCourse() {
         return titleOfCourse;
     }

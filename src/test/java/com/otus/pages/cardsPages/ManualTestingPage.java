@@ -19,18 +19,30 @@ public class ManualTestingPage extends BasePage {
     private String titleOfCourse = "//div[@class='preparatory-intro__title']";
     private final int numberCard = 11;
 
+    /**
+     * @return xpath Длительность обучения
+     */
     public String getDuration() {
         return duration;
     }
 
+    /**
+     * @return xpath Описания курса
+     */
     public String getCourseAbout() {
         return courseAbout;
     }
 
+    /**
+     * @return xpath Названия курса
+     */
     public String getTitleOfCourse() {
         return titleOfCourse;
     }
 
+    /**
+     * @return Номер карточки
+     */
     public int getNumberCard() {
         return numberCard;
     }
