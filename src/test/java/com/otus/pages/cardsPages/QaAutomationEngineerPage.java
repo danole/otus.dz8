@@ -17,7 +17,7 @@ public class QaAutomationEngineerPage extends BasePage {
     private String duration = "//div[@field='tn_text_1613568879568']";
     private String courseAbout = "//div[@id='rec330678591']";
     private String titleOfCourse = "//img[@imgfield='tn_img_1618313079427']";
-    private final int numberCard = 6;
+    private final int numberCard = 5;
 
     public String getDuration() {
         return duration;

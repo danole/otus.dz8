@@ -33,7 +33,7 @@ public class TestingPage extends BasePage {
         driver.manage().window().fullscreen();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         for (int i = 0; i < cards.size(); i++) {
-            if (i == 5 || i == 10) {
+            if (i == 4 || i == 10) {
                 continue;
             }
             WebElement course = cards.get(i);
@@ -48,7 +48,7 @@ public class TestingPage extends BasePage {
 
     public void goToQaAutomationEngineerPage() {
         List<WebElement> cards = driver.findElements(By.xpath(card));
-        WebElement course = cards.get(5);
+        WebElement course = cards.get(4);
         course.click();
     }
 

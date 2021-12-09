@@ -47,7 +47,7 @@ public class OtusTest extends BaseTest {
     }
 
     @Test
-    public void checkingDateOfEventTest() throws ParseException {
+    public void checkingDateOfEventTest() throws ParseException, InterruptedException {
         MainPage mainPage = new MainPage(driver, actions);
         mainPage.goToSiteOtus();
         mainPage.goToSectionEvent();
@@ -57,7 +57,7 @@ public class OtusTest extends BaseTest {
     }
 
     @Test
-    public void checkingTypeOfEvent() {
+    public void checkingTypeOfEvent() throws InterruptedException {
         MainPage mainPage = new MainPage(driver, actions);
         mainPage.goToSiteOtus();
         mainPage.goToSectionEvent();
