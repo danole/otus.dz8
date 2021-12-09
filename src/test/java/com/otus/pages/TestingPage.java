@@ -19,6 +19,7 @@ public class TestingPage extends BasePage {
     }
 
     protected Logger logger = LogManager.getLogger(TestingPage.class.getName());
+    private String closeBanner = "//div[@class='sticky-banner__close js-sticky-banner-close']";
     private String card = "//a[@class='js-stats lessons__new-item lessons__new-item_hovered']";
     public final int NUMBER_OF_CARDS = 11;
 
@@ -38,8 +39,8 @@ public class TestingPage extends BasePage {
      */
     public void checkingInformation(BaseCardPage baseCardPage) {
         List<WebElement> cards = driver.findElements(By.xpath(card));
-        driver.manage().window().fullscreen();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        waitToClickableButton(closeBanner).click();
         for (int i = 0; i < cards.size(); i++) {
             if (i == 4 || i == 10) {
                 continue;
