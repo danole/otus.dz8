@@ -58,7 +58,7 @@ public class EventPage extends BasePage {
 
         }
 
-        int generalMonth = date.getMonth();
+        int generalMonth = myList[0].getMonth();
         int prevMonth = date.getMonth();
 
         for (int i = 0; i < myList.length; i++) {
